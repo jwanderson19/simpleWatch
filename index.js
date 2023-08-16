@@ -11,13 +11,19 @@ let interval = 0
 function start(){
     interval = setInterval(add,10)
 
+    if(document.getElementById('btn_start').onclick){
+        document.getElementById('btn_start').disabled=true
+    }
+
 }
 
 function pause(){
     clearInterval(interval)
+    document.getElementById('btn_start').disabled=false
 }
 
 function stop(){
+    document.getElementById('btn_start').disabled=false
     clearInterval(interval)
     min = 0
     sec = 0
